@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadir Arruda Neves Pelzl — Executivo Comercial Regional</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#080808;--near:#111111;--dark:#1a1a1a;--card:#202020;
+  --b1:rgba(255,255,255,.06);--b2:rgba(255,255,255,.12);--b3:rgba(255,255,255,.22);
+  --white:#f5f5f5;--off:#e8e8e8;--mid:#a8a8a8;--dim:#686868;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--off);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.65;overflow-x:hidden;cursor:none;}
+
+#cur{position:fixed;width:7px;height:7px;background:var(--white);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity .3s;}
+#ring{position:fixed;width:32px;height:32px;border:1px solid rgba(255,255,255,.22);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.3rem 5rem;background:rgba(8,8,8,.94);backdrop-filter:blur(24px);border-bottom:1px solid var(--b1);}
+.nav-logo{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--white);text-transform:uppercase;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 400px;border-bottom:1px solid var(--b1);}
+.hero-left{padding:10rem 5rem 6rem 6rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;border-right:1px solid var(--b1);}
+.hero-tag{position:absolute;top:8rem;left:6rem;font-family:'Syne',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
+.hero-name{font-family:'Instrument Serif',serif;font-size:clamp(4.5rem,7.5vw,7.5rem);font-weight:400;line-height:.9;letter-spacing:-.02em;color:var(--white);margin-bottom:2.5rem;}
+.hero-name span{font-style:italic;color:var(--mid);}
+.hero-position{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:400;color:var(--mid);max-width:500px;line-height:1.8;margin-bottom:3.5rem;padding-left:1.2rem;border-left:1px solid var(--b3);}
+.hero-ctas{display:flex;gap:1rem;}
+.btn-p{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--white);padding:.95rem 2.2rem;text-decoration:none;border:1px solid var(--white);transition:all .3s;display:inline-block;}
+.btn-p:hover{background:transparent;color:var(--white);}
+.btn-g{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);background:transparent;padding:.95rem 2.2rem;text-decoration:none;border:1px solid var(--b2);transition:all .3s;display:inline-block;}
+.btn-g:hover{color:var(--white);border-color:var(--b3);}
+
+.hero-right{position:relative;overflow:hidden;}
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%) contrast(1.1) brightness(.78);display:block;}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,var(--black) 0%,transparent 18%,transparent 55%,var(--black) 100%),linear-gradient(to left,transparent 55%,var(--black) 100%);}
+
+/* ── NÚMEROS ── */
+.numbers-section{padding:0;background:var(--black);}
+.numbers-intro{padding:6rem 6rem 4rem;border-bottom:1px solid var(--b1);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;}
+.section-eyebrow{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:1.2rem;}
+.numbers-intro-text{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3vw,3rem);font-weight:400;color:var(--white);line-height:1.15;max-width:600px;}
+.numbers-intro-text em{font-style:italic;color:var(--mid);}
+.numbers-intro-sub{font-size:.9rem;font-weight:400;color:var(--mid);line-height:1.8;align-self:end;}
+
+.num-grid-big{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--b1);}
+.num-big{padding:5rem 3.5rem 4rem;border-right:1px solid var(--b1);position:relative;overflow:hidden;transition:background .4s;}
+.num-big:last-child{border-right:none;}
+.num-big:hover{background:var(--near);}
+.num-big::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--white);opacity:0;transition:opacity .4s;}
+.num-big:hover::after{opacity:.3;}
+.nb-val{font-family:'Instrument Serif',serif;font-size:clamp(3.2rem,5.5vw,5rem);font-weight:400;color:var(--white);line-height:1;display:block;margin-bottom:1.2rem;}
+.nb-context{font-family:'DM Sans',sans-serif;font-size:.84rem;font-weight:400;color:var(--mid);line-height:1.65;}
+.nb-context strong{color:var(--off);font-weight:500;}
+
+.num-grid-secondary{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--b1);}
+.num-sec{padding:2.5rem 3.5rem;border-right:1px solid var(--b1);transition:background .3s;}
+.num-sec:last-child{border-right:none;}
+.num-sec:hover{background:var(--near);}
+.ns-val{font-family:'Instrument Serif',serif;font-size:2.2rem;font-weight:400;color:var(--white);line-height:1;display:block;margin-bottom:.5rem;}
+.ns-label{font-size:.7rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);line-height:1.5;}
+
+/* ── QUEM SOU ── */
+.about-section{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--b1);}
+.about-left{padding:8rem 5rem 8rem 6rem;border-right:1px solid var(--b1);}
+.about-right{padding:8rem 6rem 8rem 5rem;display:flex;flex-direction:column;justify-content:center;}
+.about-title{font-family:'Instrument Serif',serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:400;color:var(--white);line-height:1.0;margin-bottom:2.5rem;}
+.about-title em{font-style:italic;color:var(--mid);}
+.about-text{font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:400;color:var(--mid);line-height:1.9;}
+.about-text strong{color:var(--off);font-weight:500;}
+.about-text p+p{margin-top:1.5rem;}
+.delivers-list{display:flex;flex-direction:column;gap:0;}
+.deliver-item{padding:1.8rem 0;border-bottom:1px solid var(--b1);display:flex;align-items:flex-start;gap:1.5rem;transition:background .3s;}
+.deliver-item:first-child{padding-top:0;}
+.deliver-item:last-child{border-bottom:none;}
+.d-num{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;color:var(--dim);padding-top:.25rem;min-width:24px;}
+.d-title{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--white);margin-bottom:.4rem;}
+.d-desc{font-size:.82rem;font-weight:400;color:var(--mid);line-height:1.7;}
+
+/* ── TRAJETÓRIA ── */
+.traj-section{padding:8rem 6rem;background:var(--near);}
+.section-header{margin-bottom:5rem;padding-bottom:3rem;border-bottom:1px solid var(--b1);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(2.6rem,4vw,4rem);font-weight:400;color:var(--white);line-height:1.05;}
+.section-title em{font-style:italic;color:var(--mid);}
+.section-desc{font-size:.9rem;font-weight:400;color:var(--mid);line-height:1.8;}
+
+.exp-row{display:grid;grid-template-columns:220px 1fr;gap:4rem;border-top:1px solid var(--b1);padding:4rem 0;position:relative;}
+.exp-row::before{content:'';position:absolute;left:-6rem;right:-6rem;top:0;bottom:0;background:rgba(255,255,255,.015);opacity:0;transition:opacity .4s;pointer-events:none;}
+.exp-row:hover::before{opacity:1;}
+.exp-period{font-family:'Syne',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:1.2rem;}
+.exp-co{font-family:'Instrument Serif',serif;font-size:2rem;color:var(--white);line-height:1.05;margin-bottom:.5rem;transition:color .3s;}
+.exp-row:hover .exp-co{color:var(--off);}
+.exp-role{font-size:.78rem;font-weight:300;color:var(--dim);font-style:italic;line-height:1.5;}
+.exp-context{font-size:.88rem;font-weight:400;color:var(--mid);line-height:1.75;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--b1);font-style:italic;}
+.exp-context strong{color:var(--off);font-weight:500;font-style:normal;}
+
+.metrics-wrap{display:flex;flex-wrap:wrap;gap:0;margin-bottom:2rem;border:1px solid var(--b1);}
+.mbox{padding:1.3rem 1.6rem;border-right:1px solid var(--b1);flex:1;min-width:90px;}
+.mbox:last-child{border-right:none;}
+.mv{font-family:'Instrument Serif',serif;font-size:1.8rem;color:var(--white);line-height:1;display:block;margin-bottom:.4rem;white-space:nowrap;}
+.ml{font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);line-height:1.5;}
+
+.hl{background:rgba(255,255,255,.025);border:1px solid var(--b1);padding:2rem 2.2rem;margin-bottom:.8rem;position:relative;overflow:hidden;transition:border-color .3s,background .3s;}
+.hl:hover{border-color:var(--b2);background:rgba(255,255,255,.04);}
+.hl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--white);opacity:.25;}
+.hl-tag{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:.6rem;}
+.hl-title{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--white);margin-bottom:.7rem;line-height:1.25;}
+.hl-body{font-size:.86rem;font-weight:400;color:var(--mid);line-height:1.8;}
+.hl-body strong{color:var(--off);font-weight:500;}
+
+.mdl-table{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--b1);margin-bottom:.8rem;}
+.mdl-cell{padding:1.4rem 1.6rem;border-right:1px solid var(--b1);border-bottom:1px solid var(--b1);}
+.mdl-cell:nth-child(2n){border-right:none;}
+.mdl-cell:nth-child(3),.mdl-cell:nth-child(4){border-bottom:none;}
+.mdl-head{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:.8rem;display:block;}
+.mdl-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--b1);font-size:.82rem;}
+.mdl-row:last-child{border-bottom:none;}
+.mdl-cat{color:var(--mid);font-weight:300;}
+.mdl-val{color:var(--white);font-weight:500;}
+
+/* ── CASES ── */
+.cases-section{padding:8rem 6rem;background:var(--black);}
+.case-block{border:1px solid var(--b1);margin-bottom:2px;padding:4.5rem 5rem;background:var(--black);transition:background .3s;}
+.case-block:hover{background:var(--near);}
+.case-eyebrow{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.2rem;}
+.case-title{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,2.8vw,2.5rem);color:var(--white);line-height:1.1;margin-bottom:3rem;}
+.case-cols{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3rem;}
+.par-head{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:.9rem;}
+.par-text{font-size:.88rem;font-weight:400;color:var(--mid);line-height:1.85;}
+.par-text strong{color:var(--off);font-weight:500;}
+.result-bar{border-top:1px solid var(--b2);padding-top:2.5rem;}
+.result-head{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);opacity:.6;display:block;margin-bottom:1rem;}
+.result-text{font-size:.92rem;font-weight:400;color:var(--off);line-height:1.85;}
+.result-text strong{font-weight:600;color:var(--white);}
+
+/* ── COMPETÊNCIAS ── */
+.skills-section{padding:7rem 6rem;background:var(--near);}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--b1);}
+.skill-item{padding:2.8rem;border-right:1px solid var(--b1);border-bottom:1px solid var(--b1);transition:background .3s;}
+.skill-item:hover{background:var(--dark);}
+.skill-item:nth-child(3n){border-right:none;}
+.skill-item:nth-child(n+7){border-bottom:none;}
+.sk-n{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;color:var(--dim);margin-bottom:.9rem;}
+.sk-t{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--white);margin-bottom:1rem;}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.sk-tag{font-size:.68rem;font-weight:300;color:var(--mid);border:1px solid var(--b1);padding:.25rem .65rem;}
+
+/* ── FORMAÇÃO ── */
+.edu-section{padding:7rem 6rem;background:var(--black);}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--b1);}
+.edu-item{padding:2.5rem;border-right:1px solid var(--b1);border-bottom:1px solid var(--b1);transition:background .3s;}
+.edu-item:hover{background:var(--near);}
+.edu-item:nth-child(3n){border-right:none;}
+.edu-item:nth-child(4),.edu-item:nth-child(5),.edu-item:nth-child(6){border-bottom:none;}
+.edu-y{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:.6rem;}
+.edu-n{font-family:'Instrument Serif',serif;font-size:1.05rem;color:var(--white);margin-bottom:.3rem;line-height:1.3;}
+.edu-i{font-size:.75rem;font-weight:300;color:var(--dim);font-style:italic;}
+
+/* ── CONTATO ── */
+.contact-section{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--b1);}
+.contact-left{padding:8rem 5rem 8rem 6rem;border-right:1px solid var(--b1);display:flex;flex-direction:column;justify-content:space-between;}
+.contact-title{font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:400;font-style:italic;color:var(--white);line-height:1.0;margin-bottom:2rem;}
+.contact-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:380px;}
+.footer-note{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.contact-right{padding:8rem 6rem 8rem 5rem;display:flex;flex-direction:column;justify-content:center;gap:0;}
+.clink{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-bottom:1px solid var(--b1);text-decoration:none;transition:background .3s;margin:0 -1rem;padding-left:1rem;padding-right:1rem;}
+.clink:first-child{border-top:1px solid var(--b1);}
+.clink:hover{background:var(--near);}
+.cl-info{}
+.cl-label{font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:.3rem;}
+.cl-val{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:400;color:var(--off);}
+.cl-arrow{font-size:1.1rem;color:var(--dim);transition:transform .3s,color .3s;}
+.clink:hover .cl-arrow{transform:translate(4px,-4px);color:var(--white);}
+
+/* RULE */
+.rule{width:100%;height:1px;background:var(--b1);}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+.fd1{transition-delay:.08s;}.fd2{transition-delay:.16s;}.fd3{transition-delay:.24s;}
+
+@media(max-width:1100px){
+  nav{padding:1.2rem 2rem;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:8rem 2.5rem 4rem;}
+  .hero-right{height:65vw;position:relative;}
+  .num-grid-big,.num-grid-secondary{grid-template-columns:1fr 1fr;}
+  .about-section,.section-header{grid-template-columns:1fr;}
+  .traj-section,.cases-section,.skills-section,.edu-section{padding:5rem 2.5rem;}
+  .exp-row{grid-template-columns:1fr;gap:2rem;}
+  .case-cols{grid-template-columns:1fr;}
+  .skill-grid,.edu-grid{grid-template-columns:1fr 1fr;}
+  .contact-section{grid-template-columns:1fr;}
+  .contact-left,.contact-right{padding:5rem 2.5rem;}
+}
+@media(max-width:700px){
+  .nav-links{display:none;}
+  .num-grid-big,.num-grid-secondary,.skill-grid,.edu-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="ring"></div>
+
+<nav>
+  <div class="nav-logo">Jadir Arruda Neves Pelzl</div>
+  <ul class="nav-links">
+    <li><a href="#numeros">Resultados</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#trajetoria">Trajetória</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#competencias">Competências</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ 1. HERO ═══ -->
+<div class="hero">
+  <div class="hero-left fi">
+    <span class="hero-tag">Portfólio Executivo · 2025</span>
+    <h1 class="hero-name">Jadir Arruda<br><span>Neves Pelzl</span></h1>
+    <p class="hero-position">Executivo Comercial Regional com 25 anos entregando crescimento em varejo, franquias, FMCG e materiais de construção. Especialista em estruturar operações, expandir territórios e transformar dados em resultado de negócio. Centro-Oeste, Norte e Nordeste.</p>
+    <div class="hero-ctas">
+      <a href="#contato" class="btn-p">Entrar em Contato</a>
+      <a href="#numeros" class="btn-g">Ver Resultados</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Jadir Arruda Neves Pelzl">
+    <div class="hero-fade"></div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- ═══ 2. NÚMEROS ═══ -->
+<section id="numeros" class="numbers-section">
+  <div class="numbers-intro fi">
+    <div>
+      <div class="section-eyebrow">02 — Resultados que definem a gestão</div>
+      <p class="numbers-intro-text">Números reais, de operações reais.<br><em>Cada um com contexto e prova.</em></p>
+    </div>
+    <p class="numbers-intro-sub">Seis empresas, cinco setores, três regiões do Brasil. Uma progressão consistente de resultado — sempre com dados, sempre com método.</p>
+  </div>
+
+  <div class="num-grid-big">
+    <div class="num-big fi fd1">
+      <span class="nb-val">+104%</span>
+      <p class="nb-context">Crescimento regional acumulado Jan–Set/2025 vs mesmo período 2024. <strong>JB Portas, Centro-Oeste · Norte · Nordeste.</strong></p>
+    </div>
+    <div class="num-big fi fd2">
+      <span class="nb-val">+444%</span>
+      <p class="nb-context">Crescimento Q1/2025 vs Q1/2024 sobre <strong>região estruturada do zero</strong> — 4 estados novos abertos, carteira construída do início.</p>
+    </div>
+    <div class="num-big fi fd3">
+      <span class="nb-val">ROI 10x</span>
+      <p class="nb-context">Retorno sobre investimento da Copa do Nordeste. <strong>R$ 37,8M de mídia equivalente</strong> sobre R$ 688k investidos. Subway 2016.</p>
+    </div>
+    <div class="num-big fi">
+      <span class="nb-val">+79,7%</span>
+      <p class="nb-context">Crescimento de faturamento regional em 12 meses. <strong>R$ 1,72M → R$ 3,09M.</strong> JB Portas 2024→2025.</p>
+    </div>
+  </div>
+
+  <div class="num-grid-secondary">
+    <div class="num-sec fi fd1">
+      <span class="ns-val">+56,3%</span>
+      <span class="ns-label">Sell Out TT Foods acima do target — Mondelēz Q4/2020. Classificação Diamante.</span>
+    </div>
+    <div class="num-sec fi fd2">
+      <span class="ns-val">+51%</span>
+      <span class="ns-label">Crescimento loja deficitária — R$ 2,87M → R$ 4,96M pico. Sertão Comercial.</span>
+    </div>
+    <div class="num-sec fi fd3">
+      <span class="ns-val">R$600k+</span>
+      <span class="ns-label">Revertidos em obras sociais para o IBR e Centro Pestalozzi. 5 edições Subway.</span>
+    </div>
+    <div class="num-sec fi">
+      <span class="ns-val">+28,7%</span>
+      <span class="ns-label">Crescimento da rede Sertão Comercial vs base pré-gestão. 3 novas lojas abertas.</span>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 3. SOBRE ═══ -->
+<section id="sobre" class="about-section">
+  <div class="about-left fi">
+    <h2 class="about-title">Quem sou e<br><em>o que entrego</em></h2>
+    <p class="about-text">
+      <p class="about-text">Sou um executivo comercial com <strong>25 anos de carreira</strong> construída em setores exigentes — FMCG, franquias, varejo, materiais de construção e agronegócio. Passei por seis empresas em três regiões do Brasil, sempre em posições de liderança com responsabilidade direta por resultado.</p>
+      <p class="about-text">Minha marca é <strong>clareza de diagnóstico e execução sem perder o estratégico de vista</strong>. Não sou um gerente que empurra meta — sou um executivo que entende o negócio, estrutura o time certo, define o canal correto e acompanha até o resultado aparecer nos números.</p>
+      <p class="about-text">Ao longo da carreira, abri mercados, reverti operações deficitárias, desenvolvi lideranças internas e entreguei crescimento consistente mesmo em contextos de baixo desempenho histórico. Isso não é sorte — é <strong>método.</strong></p>
+  </div>
+  <div class="about-right fi">
+    <div>
+      <div class="section-eyebrow" style="margin-bottom:2rem;">O que entrego em qualquer operação</div>
+      <div class="delivers-list">
+        <div class="deliver-item">
+          <span class="d-num">01</span>
+          <div class="d-content">
+            <div class="d-title">Head Comercial e Expansão Regional</div>
+            <div class="d-desc">Estruturo operações em territórios novos ou subdesenvolvidos, defino canal, monto time e entrego crescimento com previsibilidade.</div>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <span class="d-num">02</span>
+          <div class="d-content">
+            <div class="d-title">Gestão de Canais B2B e KAM</div>
+            <div class="d-desc">Canais direto, indireto, distribuidor e atacado. JBP, sell in, sell out, positivação e mix — com acompanhamento por dados.</div>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <span class="d-num">03</span>
+          <div class="d-content">
+            <div class="d-title">Desenvolvimento de Times e Lideranças</div>
+            <div class="d-desc">Identifico potencial, promovo internamente e contrato cirurgicamente. Resultado: equipes estáveis que entregam sem depender do gestor.</div>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <span class="d-num">04</span>
+          <div class="d-content">
+            <div class="d-title">Turnaround Comercial</div>
+            <div class="d-desc">Diagnóstico rápido de operações com baixo desempenho. Intervenção em processos, equipe, mix e canal. Reversão com resultado mensurável.</div>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <span class="d-num">05</span>
+          <div class="d-content">
+            <div class="d-title">Gestão por Dados e Inteligência Comercial</div>
+            <div class="d-desc">Power BI, CRM, ERP e pipeline. Decisões baseadas em dados, não em intuição. Margem, conversão e forecast como ferramentas de gestão diária.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 4. TRAJETÓRIA ═══ -->
+<section id="trajetoria" class="traj-section">
+  <div class="section-header fi">
+    <div>
+      <div class="section-eyebrow">04 — Trajetória</div>
+      <h2 class="section-title">Cada empresa,<br><em>um resultado maior</em></h2>
+    </div>
+    <p class="section-desc">6 empresas em 5 setores distintos. Uma progressão consistente de responsabilidade, escala e impacto — de operações a estratégia regional multiterritório.</p>
+  </div>
+
+  <!-- JB PORTAS -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Out/2024 — Presente</span>
+      <div class="exp-co">JB Portas</div>
+      <div class="exp-role">Gerente Regional · Centro-Oeste, Norte e Nordeste · 8 estados · 14 representantes</div>
+    </div>
+    <div>
+      <p class="exp-context">Fabricante e distribuidora de portas, batentes e guarnições. Canal: materiais de construção. Assumiu a região com cobertura limitada, estruturou a operação e expandiu consistentemente em 12 meses.</p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">+79,7%</span><span class="ml">Crescimento faturamento</span></div>
+        <div class="mbox"><span class="mv">+104%</span><span class="ml">Acumulado Jan–Set/2025</span></div>
+        <div class="mbox"><span class="mv">+444%</span><span class="ml">Q1/2025 vs Q1/2024</span></div>
+        <div class="mbox"><span class="mv">R$&nbsp;3,09M</span><span class="ml">Faturamento 2025</span></div>
+      </div>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">13→34</span><span class="ml">Contas ativas (+149%)</span></div>
+        <div class="mbox"><span class="mv">4→8</span><span class="ml">Estados cobertos</span></div>
+        <div class="mbox"><span class="mv">9</span><span class="ml">Grandes contas recuperadas</span></div>
+        <div class="mbox"><span class="mv">R$&nbsp;67,89</span><span class="ml">MC unitária (empresa: R$48,32 · +40% acima)</span></div>
+      </div>
+      <div class="hl fi">
+        <div class="hl-tag">Expansão territorial</div>
+        <div class="hl-title">Assumiu região subdesenvolvida e dobrou cobertura em 12 meses</div>
+        <div class="hl-body">Estruturou operação em 4 novos estados, recuperou <strong>9 grandes contas estratégicas</strong> e elevou a carteira de 13 para 34 contas ativas. Entregou crescimento com margem de contribuição <strong>+5,22pp acima da média da empresa</strong> — crescimento com qualidade de venda, não com desconto.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERTÃO -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Jun/2021 — Abr/2024</span>
+      <div class="exp-co">Sertão Comercial</div>
+      <div class="exp-role">Gerente Regional Comercial · Mato Grosso do Sul · 11 lojas</div>
+    </div>
+    <div>
+      <p class="exp-context">Maior rede de Home Center, ferramentas e equipamentos Agro do MS. Entrada com 8 lojas, saída com 11 — 3 novas unidades abertas durante a gestão. <strong>🏆 Prêmio Melhor Gerente Regional 2023.</strong></p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">+12,4%</span><span class="ml">Crescimento na gestão</span></div>
+        <div class="mbox"><span class="mv">+28,7%</span><span class="ml">Vs base pré-gestão</span></div>
+        <div class="mbox"><span class="mv">R$&nbsp;28,3M</span><span class="ml">Adicionados pelas 3 novas lojas</span></div>
+        <div class="mbox"><span class="mv">R$&nbsp;15,9M</span><span class="ml">Melhor mês da rede — Out/2023</span></div>
+      </div>
+      <div class="hl fi">
+        <div class="hl-tag">Turnaround · Super Pro Borja</div>
+        <div class="hl-title">Loja deficitária transformada: +51% de crescimento</div>
+        <div class="hl-body">Intervenção em processos, mix e equipe. <strong>R$ 2,87M → R$ 4,96M</strong> no pico (+51%). Maior mês isolado: <strong>R$ 609k em Jul/2022</strong>.</div>
+      </div>
+      <div class="hl fi">
+        <div class="hl-tag">Desenvolvimento de liderança · Aero Rancho</div>
+        <div class="hl-title">Alto turnover revertido e crescimento de +15,2%</div>
+        <div class="hl-body">Identificou falha de liderança como causa-raiz. Reestruturou o time: <strong>promoveu gerente assistente a gerente geral</strong>, promoveu vendedor técnico a supervisor e depois a gerente, e contratou liderança externa com perfil de cobrança. Resultado: <strong>R$ 15,4M → R$ 17,8M</strong>, pico de R$ 17,9M em 2022, turnover controlado.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONDELEZ -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Ago/2019 — Nov/2020</span>
+      <div class="exp-co">Mondelēz</div>
+      <div class="exp-role">KAM Sênior · Trade Marketing · Regional CO/NO/TM</div>
+    </div>
+    <div>
+      <p class="exp-context">Gestão de canais direto, indireto, distribuidor (DISDAL AC) e atacadista. Coordenação de Trade Marketing e gestão indireta da força comercial do distribuidor. JBP trimestral com sell in, sell out e positivação por categoria.</p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">💎 DIAMANTE</span><span class="ml">Programa Máx Excellence Q4/2020</span></div>
+        <div class="mbox"><span class="mv">1.045 pts</span><span class="ml">Pontuação (mínimo: 1.020)</span></div>
+      </div>
+      <div class="mdl-table fi">
+        <div class="mdl-cell">
+          <span class="mdl-head">Sell Out vs Target — Q4/2020</span>
+          <div class="mdl-row"><span class="mdl-cat">TT Foods</span><span class="mdl-val">+56,3%</span></div>
+          <div class="mdl-row"><span class="mdl-cat">Chocolates</span><span class="mdl-val">+75,8%</span></div>
+          <div class="mdl-row"><span class="mdl-cat">G&C</span><span class="mdl-val">+31,3%</span></div>
+        </div>
+        <div class="mdl-cell">
+          <span class="mdl-head">Positivação vs Target — Q4/2020</span>
+          <div class="mdl-row"><span class="mdl-cat">Bis Xtra</span><span class="mdl-val">+82,3%</span></div>
+          <div class="mdl-row"><span class="mdl-cat">Halls</span><span class="mdl-val">+8,8%</span></div>
+          <div class="mdl-row"><span class="mdl-cat">Trident</span><span class="mdl-val">+3,6%</span></div>
+        </div>
+        <div class="mdl-cell" style="border-bottom:none;">
+          <span style="font-size:.8rem;color:var(--mid);">Positivação Total média Q4: <strong style="color:var(--off);">398 vs target 389 (+2,3%)</strong></span>
+        </div>
+        <div class="mdl-cell" style="border-bottom:none;">
+          <span style="font-size:.8rem;color:var(--mid);">DISDAL RO também classificado como <strong style="color:var(--off);">Ouro</strong> no mesmo programa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBWAY -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Jun/2014 — Ago/2019</span>
+      <div class="exp-co">Subway</div>
+      <div class="exp-role">3 cargos progressivos · BA · Norte · Nordeste · 343 franquias · 15 estados</div>
+    </div>
+    <div>
+      <p class="exp-context">Gerente de Marketing Regional com trajetória progressiva — de Consultor de Franquias a Gerente de Marketing Regional Norte e Nordeste. Responsável por campanhas regionais, expansão e responsabilidade social. Atuação de 2014 a 2019.</p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">11,9M</span><span class="ml">Impactos Copa do Nordeste</span></div>
+        <div class="mbox"><span class="mv">ROI 10x</span><span class="ml">Mídia equiv. R$37,8M / R$688k</span></div>
+        <div class="mbox"><span class="mv">+11,8%</span><span class="ml">AUV Dobro de Sabor</span></div>
+        <div class="mbox"><span class="mv">R$&nbsp;600k+</span><span class="ml">Revertidos ao IBR e Pestalozzi</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLIFRIO -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Ago/2011 — Out/2012</span>
+      <div class="exp-co">Polifrio Nordeste</div>
+      <div class="exp-role">Coordenador Comercial · PE e AL · Refrigeração comercial</div>
+    </div>
+    <div>
+      <p class="exp-context">Região com histórico de baixo desempenho. Estruturou o time comercial e escalou o processo de financiamento via FINAME e Cartão BNDES para câmaras frigoríficas e equipamentos de grande porte — modelo que já existia na empresa, mas era pouco explorado. Criou pontes diretas com gerentes de banco para agilizar aprovações e ampliar o volume de vendas financiadas.</p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">+11%</span><span class="ml">Faturamento</span></div>
+        <div class="mbox"><span class="mv">+16%</span><span class="ml">Base de clientes</span></div>
+        <div class="mbox"><span class="mv">+9%</span><span class="ml">Vendas financiadas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MCDONALD'S -->
+  <div class="exp-row fi">
+    <div>
+      <span class="exp-period">Jun/1997 — Ago/2011</span>
+      <div class="exp-co">McDonald's</div>
+      <div class="exp-role">Gerente de Operações · Maralco · Recife, PE · 14 anos</div>
+    </div>
+    <div>
+      <p class="exp-context">14 anos de formação em operações de alto volume, gestão de pessoas, P&L e cultura de excelência. Premiação <strong>Triplo A (AAA)</strong> em Qualidade, Serviço e Limpeza com nota 97% em auditorias. <strong>2º lugar nacional</strong> na competição interna de melhor gerente de vendas em 2006. A base que sustenta toda a disciplina executiva da carreira.</p>
+      <div class="metrics-wrap">
+        <div class="mbox"><span class="mv">42+</span><span class="ml">Colaboradores gerenciados</span></div>
+        <div class="mbox"><span class="mv">AAA</span><span class="ml">Premiação Triplo A — Qualidade, Serviço e Limpeza</span></div>
+        <div class="mbox"><span class="mv">97%</span><span class="ml">Nota em auditorias operacionais</span></div>
+        <div class="mbox"><span class="mv">2º lugar</span><span class="ml">Nacional — melhor gerente de vendas 2006</span></div>
+        <div class="mbox"><span class="mv">-23%</span><span class="ml">Desperdício operacional</span></div>
+        <div class="mbox"><span class="mv">-12%</span><span class="ml">Redução de turnover</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 5. CASES ═══ -->
+<section id="cases" class="cases-section">
+  <div class="section-header fi" style="background:var(--black);">
+    <div>
+      <div class="section-eyebrow">05 — Cases Estratégicos</div>
+      <h2 class="section-title">Problema real.<br><em>Decisão. Resultado.</em></h2>
+    </div>
+    <p class="section-desc">Cada case revela o raciocínio por trás da ação — não apenas o que foi feito, mas como o problema foi diagnosticado e qual decisão gerou o resultado.</p>
+  </div>
+
+  <!-- CASE 1 - DESTAQUE: JB Portas / Mais recente e maior relevância executiva -->
+  <div class="case-block fi" style="border-color:rgba(255,255,255,.2);background:var(--near);padding:5rem 5rem 5rem;">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+      <div class="case-eyebrow" style="margin-bottom:0;">JB Portas · Out/2024–Presente · Gestão Regional · 8 estados</div>
+      <span style="font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--white);padding:.25rem .75rem;">ATUAL</span>
+    </div>
+    <div class="case-title">Expansão regional do zero: +104% acumulado e carteira triplicada em 12 meses</div>
+    <div class="case-cols">
+      <div>
+        <span class="par-head">Problema</span>
+        <p class="par-text">Região Centro-Oeste, Norte e Nordeste com cobertura limitada a 4 estados, carteira de apenas 13 contas ativas e faturamento de R$ 1,72M. Sem estrutura comercial consolidada para suportar crescimento.</p>
+      </div>
+      <div>
+        <span class="par-head">Ação estratégica</span>
+        <p class="par-text">Mapeou território, priorizou 4 novos estados com maior potencial, estruturou equipe de 14 representantes e definiu estratégia de recuperação de contas estratégicas perdidas. Implementou monitoramento de pipeline via CRM e Power BI para decisões baseadas em dados.</p>
+      </div>
+    </div>
+    <div class="result-bar">
+      <span class="result-head">Resultado</span>
+      <p class="result-text">Faturamento <strong>R$ 1,72M → R$ 3,09M (+79,7%)</strong> · Acumulado Jan–Set/2025: <strong>+104%</strong> vs mesmo período 2024 · Q1/2025: <strong>+444%</strong> vs Q1/2024 · Carteira: <strong>13 → 34 contas ativas</strong> (+149%) · 9 grandes contas recuperadas · Cobertura: <strong>4 → 8 estados</strong> · MC unitária: <strong>R$ 67,89 vs R$ 48,32 da empresa (+40%)</strong> — crescimento com qualidade, não com desconto.</p>
+    </div>
+  </div>
+
+  <!-- CASE 2 - Sertão Comercial / Aero Rancho -->
+  <div class="case-block fi">
+    <div class="case-eyebrow">Sertão Comercial · 2021–2023 · Desenvolvimento de Liderança · Aero Rancho</div>
+    <div class="case-title">Diagnóstico preciso reverteu crise de turnover e gerou crescimento de +15,2%</div>
+    <div class="case-cols">
+      <div>
+        <span class="par-head">Problema</span>
+        <p class="par-text">Loja com alto turnover crônico, equipe sem direção e gestão incapaz de sustentar resultado. Ambiente de baixa performance sem perspectiva de reversão com a estrutura existente.</p>
+      </div>
+      <div>
+        <span class="par-head">Ação estratégica</span>
+        <p class="par-text">Diagnosticou a causa-raiz no perfil de liderança. Reestruturou o time: <strong>promoveu gerente assistente a gerente geral</strong>, promoveu vendedor técnico a supervisor e depois a gerente, e contratou liderança externa com perfil de cobrança. Reorganizou layout, processos, rotina e incentivos.</p>
+      </div>
+    </div>
+    <div class="result-bar">
+      <span class="result-head">Resultado</span>
+      <p class="result-text"><strong>R$ 15,4M → R$ 17,8M (+15,2%)</strong> · Pico histórico de R$ 17,9M em 2022 · Turnover controlado · Três lideranças desenvolvidas internamente e estabilizadas.</p>
+    </div>
+  </div>
+
+  <!-- CASE 3 - Copa do Nordeste -->
+  <div class="case-block fi">
+    <div class="case-eyebrow">Subway · 2016/2017 · 237 lojas · 11 estados · Nordeste</div>
+    <div class="case-title">Copa do Nordeste: ROI 10x com patrocínio regionalizado de R$ 688k</div>
+    <div class="case-cols">
+      <div>
+        <span class="par-head">Problema</span>
+        <p class="par-text">Cobrir 11 estados com perfis regionais distintos, aumentar exposição da marca e criar conexão genuína com o público nordestino — com apenas 31% do budget total disponível.</p>
+      </div>
+      <div>
+        <span class="par-head">Ação estratégica</span>
+        <p class="par-text">Patrocínio da Copa do Nordeste com exposição via placas LED nos estádios e veiculação na TV Globo e Esporte Interativo (2016). Em 2017: ativações com cartão BOGO nos estádios, <strong>push mobile para torcedores</strong> e campanha interativa premiando o time da casa — trazendo o torcedor às lojas Subway.</p>
+      </div>
+    </div>
+    <div class="result-bar">
+      <span class="result-head">Resultado mensurado</span>
+      <p class="result-text"><strong>11.911.978 impactos</strong> · 5.595.440 indivíduos únicos · 50% de penetração em Recife, Fortaleza e Salvador · 14.519 exposições · 14h31min de tempo de tela · Valor de mídia equivalente <strong>R$ 37,8M</strong> sobre R$ 688k investidos · <strong>Retorno 10x sobre o investimento</strong> (QI: R$ 6,3M).</p>
+    </div>
+  </div>
+
+  <!-- CASE 4 - Dia do Bem -->
+  <div class="case-block fi">
+    <div class="case-eyebrow">Subway · 2014–2019 · Responsabilidade Social · Case Nacional da Rede</div>
+    <div class="case-title">Dia do Bem: ação social que nasceu na Bahia e virou referência nacional</div>
+    <div class="case-cols">
+      <div>
+        <span class="par-head">Problema</span>
+        <p class="par-text">Gerar fluxo adicional nas lojas mantendo o ticket médio, construir imagem social da marca e criar impacto real na comunidade — sem canibalizar o mix principal de produtos.</p>
+      </div>
+      <div>
+        <span class="par-head">Ação estratégica</span>
+        <p class="par-text">Coordenou consultores de campo, criou materiais POP exclusivos, implementou sistema TI de vouchers (FJS) e estruturou estratégia de conversão com complementos para proteger o ticket médio. Parceria com Fundação José Silveira em benefício do IBR e Centro Pestalozzi de Reabilitação.</p>
+      </div>
+    </div>
+    <div class="result-bar">
+      <span class="result-head">Resultado e impacto social</span>
+      <p class="result-text"><strong>5 edições coordenadas</strong> · R$ 600k+ revertidos · Obras: reforma da fisioterapia infantil do IBR, Parque de Estimulação Sensorial, salas de Terapia Ocupacional e Tecnologia Assistiva, climatização de Fonoaudiologia, reforma do espaço de convivência e sala de Psicologia do Centro Pestalozzi. Mais de <strong>155 mil atendimentos/ano</strong> no IBR e <strong>350 pacientes/mês</strong> no Pestalozzi beneficiados. Ação que nasceu na Bahia tornou-se <strong>case nacional da rede Subway</strong>. Selo de Responsabilidade Social Subway.</p>
+    </div>
+  </div>
+
+  <!-- CASE 5 - Dobro de Sabor -->
+  <div class="case-block fi">
+    <div class="case-eyebrow">Subway · 2017 · Campanha Comercial · Bahia</div>
+    <div class="case-title">Dobro de Sabor: ticket médio +7,9% e AUV +11,8% acima da média Brasil</div>
+    <div class="case-cols">
+      <div>
+        <span class="par-head">Problema</span>
+        <p class="par-text">Aumentar ticket médio e AUV nas lojas da Bahia, atrair novos consumidores e superar a performance nacional — com investimento controlado e sem comprometer a percepção de valor da marca.</p>
+      </div>
+      <div>
+        <span class="par-head">Ação estratégica</span>
+        <p class="par-text">Campanha Sub 15cm com proteína dupla a preço acessível. Ativação local intensa, treinamento de equipes para conversão e material de PDV regionalizado. Investimento total: <strong>R$ 166,6k</strong> (produção R$ 59k + mídia R$ 107k).</p>
+      </div>
+    </div>
+    <div class="result-bar">
+      <span class="result-head">Resultado</span>
+      <p class="result-text">Ticket médio <strong>+7,9%</strong> · AUV R$ 14,8k → <strong>R$ 16,5k (+11,8%)</strong> · Território superou média Brasil em <strong>+7,6pp</strong> em novos consumidores · 5 novos SUBs ativados no período.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 6. COMPETÊNCIAS ═══ -->
+<section id="competencias" class="skills-section">
+  <div class="section-header fi">
+    <div>
+      <div class="section-eyebrow">06 — Competências</div>
+      <h2 class="section-title">O que entrego<br><em>em qualquer operação</em></h2>
+    </div>
+    <p class="section-desc">Competências construídas na prática, em setores e regiões distintas — não declaradas, demonstradas nos resultados acima.</p>
+  </div>
+  <div class="skill-grid fi">
+    <div class="skill-item">
+      <div class="sk-n">01</div>
+      <div class="sk-t">Head Comercial e Expansão</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Expansão de território</span>
+        <span class="sk-tag">Estruturação de operação</span>
+        <span class="sk-tag">Desenvolvimento de mercado</span>
+        <span class="sk-tag">Liderança regional</span>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="sk-n">02</div>
+      <div class="sk-t">Gestão de Times e Lideranças</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Representantes autônomos</span>
+        <span class="sk-tag">Desenvolvimento interno</span>
+        <span class="sk-tag">Turnaround de equipe</span>
+        <span class="sk-tag">KPIs de campo</span>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="sk-n">03</div>
+      <div class="sk-t">Canal B2B · KAM · Trade</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Canal indireto e direto</span>
+        <span class="sk-tag">Key Account Management</span>
+        <span class="sk-tag">Trade Marketing</span>
+        <span class="sk-tag">Gestão de distribuidor</span>
+        <span class="sk-tag">JBP trimestral</span>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="sk-n">04</div>
+      <div class="sk-t">Dados e Inteligência Comercial</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Power BI</span>
+        <span class="sk-tag">CRM Sapiens / Sênior</span>
+        <span class="sk-tag">HubSpot</span>
+        <span class="sk-tag">ERP Genco</span>
+        <span class="sk-tag">Pipeline e forecast</span>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="sk-n">05</div>
+      <div class="sk-t">Franquias · Varejo · Operações</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Gestão de rede de franquias</span>
+        <span class="sk-tag">P&L de unidade</span>
+        <span class="sk-tag">Abertura de lojas</span>
+        <span class="sk-tag">Processos operacionais</span>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="sk-n">06</div>
+      <div class="sk-t">Setores de Atuação</div>
+      <div class="sk-tags">
+        <span class="sk-tag">FMCG</span>
+        <span class="sk-tag">Materiais de construção</span>
+        <span class="sk-tag">Agronegócio</span>
+        <span class="sk-tag">Franquias alimentares</span>
+        <span class="sk-tag">Refrigeração comercial</span>
+        <span class="sk-tag">Varejo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 7. FORMAÇÃO ═══ -->
+<section id="formacao" class="edu-section">
+  <div class="section-header fi">
+    <div>
+      <div class="section-eyebrow">07 — Formação</div>
+      <h2 class="section-title">Educação que<br><em>sustenta a prática</em></h2>
+    </div>
+    <p class="section-desc">Formação contínua e atualizada — incluindo MBA em IA em andamento, refletindo compromisso com o que vem a seguir.</p>
+  </div>
+  <div class="edu-grid fi">
+    <div class="edu-item">
+      <div class="edu-y">2025 · Em andamento</div>
+      <div class="edu-n">MBA em Inteligência Artificial</div>
+      <div class="edu-i">Senai</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-y">2014 – 2015</div>
+      <div class="edu-n">MBA em Marketing e Vendas</div>
+      <div class="edu-i">Laureate / CEDEPE</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-y">2009 – 2013</div>
+      <div class="edu-n">Tecnólogo em Gestão de Marketing</div>
+      <div class="edu-i">Faculdade dos Guararapes / Laureate</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-y">2017 – 2018</div>
+      <div class="edu-n">Nanodegree em Marketing Digital</div>
+      <div class="edu-i">Udacity</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-y">2024</div>
+      <div class="edu-n">Excel para Análise de Dados</div>
+      <div class="edu-i">Preditiva Analytics</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-y">2024</div>
+      <div class="edu-n">Fundamentos de Analytics</div>
+      <div class="edu-i">Preditiva Analytics</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══ 8. CONTATO ═══ -->
+<div id="contato" class="contact-section">
+  <div class="contact-left fi">
+    <div>
+      <h2 class="contact-title">Disponível para novos desafios.</h2>
+      <p class="contact-sub">Aberto a oportunidades em gestão comercial regional, Head Comercial, KAM, Trade Marketing e expansão de canais B2B. Campo Grande, MS — disponível para relocação.</p>
+    </div>
+    <p class="footer-note">Jadir Arruda Neves Pelzl · Executivo Comercial Regional · 2025</p>
+  </div>
+  <div class="contact-right fi">
+    <a href="https://www.linkedin.com/in/jadirarrudaneves/" target="_blank" class="clink">
+      <div class="cl-info"><span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/jadirarrudaneves</span></div>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a href="https://wa.link/iripab" target="_blank" class="clink">
+      <div class="cl-info"><span class="cl-label">WhatsApp</span><span class="cl-val">wa.link/iripab</span></div>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a href="mailto:jadir.arruda.neves@gmail.com" class="clink">
+      <div class="cl-info"><span class="cl-label">E-mail</span><span class="cl-val">jadir.arruda.neves@gmail.com</span></div>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a href="tel:+5581981554042" class="clink">
+      <div class="cl-info"><span class="cl-label">Celular</span><span class="cl-val">+55 81 98155-4042</span></div>
+      <span class="cl-arrow">↗</span>
+    </a>
+  </div>
+</div>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function anim(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='56px';ring.style.height='56px';cur.style.opacity='0';});
+  el.addEventListener('mouseleave',()=>{ring.style.width='32px';ring.style.height='32px';cur.style.opacity='1';});
+});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.06});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+const sects=document.querySelectorAll('[id]');
+const navAs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let c='';
+  sects.forEach(s=>{if(window.scrollY>=s.offsetTop-200)c=s.id;});
+  navAs.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+c;
+    a.style.color=active?'var(--white)':'var(--dim)';
+  });
+});
+</script>
+</body>
+</html>
+
+<!-- ══ 5. CASES ══ -->
+<section id="cases" class="cases">
+  <div class="sec-hd fi">
+    <div>
+      <span class="sec-ey">05 — Cases Estratégicos</span>
+      <h2 class="sec-t">Problema real.<br><em>Decisão. Resultado.</em></h2>
+    </div>
+    <p class="sec-desc">Cada case revela o raciocínio por trás da ação — não apenas o que foi feito, mas como o problema foi diagnosticado e qual decisão gerou o resultado.</p>
+  </div>
+
+  <div class="cblock fi">
+    <div class="cey">Subway · 2016/2017 · 237 lojas · 11 estados · Nordeste</div>
+    <div class="ct">Copa do Nordeste: ROI 10x com patrocínio regionalizado de R$ 688k</div>
+    <div class="ccols">
+      <div><span class="ph">Problema</span><p class="pt">Cobrir 11 estados com perfis regionais distintos, aumentar exposição da marca e criar conexão com o público nordestino — com apenas 31% do budget total disponível.</p></div>
+      <div><span class="ph">Ação estratégica</span><p class="pt">Patrocínio da Copa do Nordeste com placas LED nos estádios e veiculação na TV Globo e Esporte Interativo. Em 2017: ativações com <strong>cartão BOGO</strong> por promotores, push mobile para torcedores e campanha interativa premiando o time da casa — levando o torcedor às lojas.</p></div>
+    </div>
+    <div class="rbar">
+      <span class="rh">Resultado mensurado</span>
+      <p class="rt"><strong>11.911.978 impactos</strong> · 5.595.440 indivíduos únicos · 50% de penetração em Recife, Fortaleza e Salvador · 14.519 exposições · 14h31min de tempo de tela · Mídia equivalente <strong>R$ 37,8M</strong> sobre R$ 688k investidos · <strong>Retorno 10x</strong> (QI: R$ 6,3M).</p>
+    </div>
+  </div>
+
+  <div class="cblock fi">
+    <div class="cey">Subway · 2014–2019 · Responsabilidade Social · Case Nacional da Rede</div>
+    <div class="ct">Dia do Bem: ação social que nasceu na Bahia e virou referência nacional</div>
+    <div class="ccols">
+      <div><span class="ph">Problema</span><p class="pt">Gerar fluxo adicional nas lojas mantendo o ticket médio, construir imagem social da marca e criar impacto real na comunidade — sem canibalizar o mix principal de produtos.</p></div>
+      <div><span class="ph">Ação estratégica</span><p class="pt">Coordenou consultores de campo para preparação operacional, criou materiais POP exclusivos, implementou sistema TI de vouchers (FJS) e estruturou estratégia de conversão com complementos para proteger o ticket médio. Parceria com Fundação José Silveira beneficiando IBR e Centro Pestalozzi.</p></div>
+    </div>
+    <div class="rbar">
+      <span class="rh">Resultado e impacto social</span>
+      <p class="rt"><strong>5 edições</strong> · R$ 600k+ revertidos · Obras entregues: reforma da fisioterapia infantil do IBR, Parque de Estimulação Sensorial, salas de Terapia Ocupacional e Tecnologia Assistiva, climatização de Fonoaudiologia, reforma do espaço de convivência e sala de Psicologia do Centro Pestalozzi. Mais de <strong>155 mil atendimentos/ano</strong> no IBR · <strong>350 pacientes/mês</strong> no Pestalozzi · Ação tornou-se <strong>case nacional da rede Subway</strong> · Selo de Responsabilidade Social.</p>
+    </div>
+  </div>
+
+  <div class="cblock fi">
+    <div class="cey">Subway · 2017 · Campanha Comercial · Bahia</div>
+    <div class="ct">Dobro de Sabor: ticket médio +7,9% e AUV +11,8% acima da média Brasil</div>
+    <div class="ccols">
+      <div><span class="ph">Problema</span><p class="pt">Aumentar ticket médio e AUV nas lojas da Bahia, atrair novos consumidores e superar a performance nacional — com investimento controlado.</p></div>
+      <div><span class="ph">Ação estratégica</span><p class="pt">Campanha Sub 15cm com proteína dupla a preço acessível. Ativação local intensa, treinamento de equipes para conversão em loja e material de PDV regionalizado. Investimento total: <strong>R$ 166,6k</strong> (produção R$ 59k + mídia R$ 107k).</p></div>
+    </div>
+    <div class="rbar">
+      <span class="rh">Resultado</span>
+      <p class="rt">Ticket médio <strong>+7,9%</strong> · AUV R$ 14,8k → <strong>R$ 16,5k (+11,8%)</strong> · Território superou média Brasil em <strong>+7,6pp</strong> em novos consumidores · 5 novos SUBs ativados.</p>
+    </div>
+  </div>
+
+  <div class="cblock fi">
+    <div class="cey">Sertão Comercial · 2021–2023 · Desenvolvimento de Liderança · Aero Rancho</div>
+    <div class="ct">Diagnóstico preciso reverteu crise de turnover e gerou crescimento de +15,2%</div>
+    <div class="ccols">
+      <div><span class="ph">Problema</span><p class="pt">Loja com alto turnover crônico, equipe sem direção e gestão incapaz de sustentar resultado. Ambiente de baixa performance sem perspectiva de reversão com a estrutura existente.</p></div>
+      <div><span class="ph">Ação estratégica</span><p class="pt">Identificou falha de liderança como causa-raiz. Promoveu <strong>vendedor técnico a supervisor e depois a gerente</strong>, contratou liderança externa com perfil de cobrança. Reorganizou layout, processos, rotina e incentivos.</p></div>
+    </div>
+    <div class="rbar">
+      <span class="rh">Resultado</span>
+      <p class="rt"><strong>R$ 15,4M → R$ 17,8M (+15,2%)</strong> · Pico histórico de R$ 17,9M em 2022 · Turnover controlado · Liderança desenvolvida internamente e estabilizada.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══ 6. COMPETÊNCIAS ══ -->
+<section id="competencias" class="skills">
+  <div class="sec-hd fi">
+    <div>
+      <span class="sec-ey">06 — Competências</span>
+      <h2 class="sec-t">O que entrego<br><em>em qualquer operação</em></h2>
+    </div>
+    <p class="sec-desc">Competências construídas na prática — não declaradas, demonstradas nos resultados e cases acima.</p>
+  </div>
+  <div class="sk-grid fi">
+    <div class="skit"><div class="skn">01</div><div class="skt">Head Comercial e Expansão</div><div class="sktags"><span class="sktag">Expansão de território</span><span class="sktag">Estruturação de operação</span><span class="sktag">Desenvolvimento de mercado</span><span class="sktag">Liderança regional</span></div></div>
+    <div class="skit"><div class="skn">02</div><div class="skt">Gestão de Times e Lideranças</div><div class="sktags"><span class="sktag">Representantes autônomos</span><span class="sktag">Desenvolvimento interno</span><span class="sktag">Turnaround de equipe</span><span class="sktag">KPIs de campo</span></div></div>
+    <div class="skit"><div class="skn">03</div><div class="skt">Canal B2B · KAM · Trade</div><div class="sktags"><span class="sktag">Canal indireto e direto</span><span class="sktag">Key Account Management</span><span class="sktag">Trade Marketing</span><span class="sktag">Gestão de distribuidor</span><span class="sktag">JBP trimestral</span></div></div>
+    <div class="skit"><div class="skn">04</div><div class="skt">Dados e Inteligência Comercial</div><div class="sktags"><span class="sktag">Power BI</span><span class="sktag">CRM Sapiens / Sênior</span><span class="sktag">HubSpot</span><span class="sktag">ERP Genco</span><span class="sktag">Pipeline e forecast</span></div></div>
+    <div class="skit"><div class="skn">05</div><div class="skt">Franquias · Varejo · Operações</div><div class="sktags"><span class="sktag">Gestão de rede de franquias</span><span class="sktag">P&L de unidade</span><span class="sktag">Abertura de lojas</span><span class="sktag">Processos operacionais</span></div></div>
+    <div class="skit"><div class="skn">06</div><div class="skt">Setores de Atuação</div><div class="sktags"><span class="sktag">FMCG</span><span class="sktag">Materiais de construção</span><span class="sktag">Agronegócio</span><span class="sktag">Franquias alimentares</span><span class="sktag">Refrigeração comercial</span><span class="sktag">Varejo</span></div></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══ 7. FORMAÇÃO ══ -->
+<section id="formacao" class="edu">
+  <div class="sec-hd fi">
+    <div>
+      <span class="sec-ey">07 — Formação</span>
+      <h2 class="sec-t">Educação que<br><em>sustenta a prática</em></h2>
+    </div>
+    <p class="sec-desc">Formação contínua e atualizada — incluindo MBA em IA em andamento, refletindo compromisso com o que vem a seguir.</p>
+  </div>
+  <div class="edu-grid fi">
+    <div class="eitem"><div class="ey">2025 · Em andamento</div><div class="en">MBA em Inteligência Artificial</div><div class="ei">Senai</div></div>
+    <div class="eitem"><div class="ey">2014 – 2015</div><div class="en">MBA em Marketing e Vendas</div><div class="ei">Laureate / CEDEPE</div></div>
+    <div class="eitem"><div class="ey">2009 – 2013</div><div class="en">Tecnólogo em Gestão de Marketing</div><div class="ei">Faculdade dos Guararapes / Laureate</div></div>
+    <div class="eitem"><div class="ey">2017 – 2018</div><div class="en">Nanodegree em Marketing Digital</div><div class="ei">Udacity</div></div>
+    <div class="eitem"><div class="ey">2024</div><div class="en">Excel para Análise de Dados</div><div class="ei">Preditiva Analytics</div></div>
+    <div class="eitem"><div class="ey">2024</div><div class="en">Fundamentos de Analytics</div><div class="ei">Preditiva Analytics</div></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══ 8. CONTATO ══ -->
+<div id="contato" class="contact">
+  <div class="cl fi">
+    <div>
+      <h2 class="contact-title">Disponível para novos desafios.</h2>
+      <p class="contact-sub">Aberto a oportunidades em Head Comercial, gestão regional, KAM, Trade Marketing e expansão de canais B2B. Campo Grande, MS — disponível para relocação.</p>
+    </div>
+    <p class="footer-note">Jadir Arruda Neves Pelzl · Executivo Comercial Regional · 2025</p>
+  </div>
+  <div class="cr fi">
+    <a href="https://www.linkedin.com/in/jadirarrudaneves/" target="_blank" class="clink">
+      <div><span class="cll">LinkedIn</span><span class="clv">linkedin.com/in/jadirarrudaneves</span></div><span class="cla">↗</span>
+    </a>
+    <a href="https://wa.link/iripab" target="_blank" class="clink">
+      <div><span class="cll">WhatsApp</span><span class="clv">wa.link/iripab</span></div><span class="cla">↗</span>
+    </a>
+    <a href="mailto:jadir.arruda.neves@gmail.com" class="clink">
+      <div><span class="cll">E-mail</span><span class="clv">jadir.arruda.neves@gmail.com</span></div><span class="cla">↗</span>
+    </a>
+    <a href="tel:+5581981554042" class="clink">
+      <div><span class="cll">Celular</span><span class="clv">+55 81 98155-4042</span></div><span class="cla">↗</span>
+    </a>
+  </div>
+</div>
+
+<script>
+/* Cursor */
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';cur.style.opacity='0';});
+  el.addEventListener('mouseleave',()=>{ring.style.width='30px';ring.style.height='30px';cur.style.opacity='1';});
+});
+
+/* Fade in */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.06});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+/* Nav ativo */
+const ids=['numeros','sobre','trajetoria','cases','competencias','contato'];
+const navAs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let c='';
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&window.scrollY>=el.offsetTop-220)c=id;
+  });
+  navAs.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+c;
+    a.classList.toggle('act',active);
+  });
+},{ passive:true });
+</script>
+</body>
+</html>
